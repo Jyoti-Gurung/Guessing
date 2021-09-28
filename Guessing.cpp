@@ -7,29 +7,27 @@ int main() {
 
   while (play == true) {
 
+    //random #s
     srand(time(NULL));
     int luck = rand() % 100;
 
     cout << "The # : " << luck << "\n\n";
     int guess;
 
-    int tries = 5;
+    int times = 0;
 
-    for (int a = 5; a > 0; a--){
+    // infinite loof of guessing; if correctly guessed then it breaks loop
+    while (true){
       cin >> guess;
-      tries = tries-1;
+      times++;
       if (guess == luck) {
-        cout << "You guessed correctly!";
+        cout << "You guessed correctly!" << "You tried " << times << " times!";
         play=false;
         break;
       }
-      if (tries==1) {
-        cout << "Incorrect : " << tries << " try left! \n\n";
-        continue;
-      }
-      cout << "Incorrect : " << tries << " tries left! \n\n";
     }
 
+    // play again q&a
     int playagain;
     cout << "\n\nPlay again? 1:Yes 2:No \n";
     cin >> playagain;
