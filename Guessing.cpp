@@ -25,6 +25,12 @@ int main() {
         play=false;
         break;
       }
+      if (guess < luck) {
+        cout << "Lower #\n";
+      }
+      if (guess > luck) {
+        cout << "Higher than #!\n";
+      }
     }
 
     // play again q&a
